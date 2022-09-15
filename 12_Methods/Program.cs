@@ -102,18 +102,53 @@ string Replace(string text, char oldValue, char newValue)
         {
             result = result + $"{newValue}";
         }
-        else 
+        else
         {
             result = result + $"{text[i]}";
         }
     }
     return result;
 }
-string newText = Replace(text, ' ','|');
-Console.WriteLine(newText);
-Console.WriteLine();
-string newText2 = Replace(newText, 'к','К');
-Console.WriteLine(newText2);
-Console.WriteLine();
-string newText3 = Replace(newText2, 'С','с');
-Console.WriteLine(newText3);
+// string newText = Replace(text, ' ', '|');
+// Console.WriteLine(newText);
+// Console.WriteLine();
+// string newText2 = Replace(newText, 'к', 'К');
+// Console.WriteLine(newText2);
+// Console.WriteLine();
+// string newText3 = Replace(newText2, 'С', 'с');
+// Console.WriteLine(newText3);
+
+// СОРТИРОВКА ВЫБОРОМ
+
+int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
+
+void PrintArray(int[] array)
+{
+    int count = array.Length;
+    for (int i = 0; i < count; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+
+void SelectionSort(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] < array[minPosition])
+            {
+                minPosition = j;
+            }
+        }
+        int temporary = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
+    }
+}
+PrintArray(arr);
+SelectionSort(arr);
+PrintArray(arr);
