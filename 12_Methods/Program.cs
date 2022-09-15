@@ -111,3 +111,9 @@ string Replace(string text, char oldValue, char newValue)
 }
 string newText = Replace(text, ' ','|');
 Console.WriteLine(newText);
+Console.WriteLine();
+string newText2 = Replace(newText, 'к','К');
+Console.WriteLine(newText2);
+Console.WriteLine();
+string newText3 = Replace(newText2, 'С','с');
+Console.WriteLine(newText3);
